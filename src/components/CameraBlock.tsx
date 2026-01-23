@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { applyNewspaperFilter } from '../utils/canvasFilters';
 import './CameraBlock.css';
 
@@ -10,169 +10,133 @@ export default function CameraBlock({ onPhotoCapture }: CameraBlockProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const hiddenCanvasRef = useRef<HTMLCanvasElement>(null);
-    const [cameraActive, setCameraActive] = useState(false);
+
+    const [stream, setStream] = useState<MediaStream | null>(null);
     const [photoData, setPhotoData] = useState<string | null>(null);
-    const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
+    /* ======================
+       CAMERA LIFECYCLE
+    ====================== */
+
+    useEffect(() => {
+        return () => {
+            stopCamera();
+        };
+    }, []);
 
     const startCamera = async () => {
         try {
             setError(null);
-            setLoading(true);
-            const stream = await navigator.mediaDevices.getUserMedia({
-                video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 720 } },
-                audio: false,
+
+            const mediaStream = await navigator.mediaDevices.getUserMedia({
+                video: { facingMode: 'user' },
+                audio: false
             });
 
+            setStream(mediaStream);
+
             if (videoRef.current) {
-                videoRef.current.srcObject = stream;
-                setCameraActive(true);
-                setLoading(false);
+                videoRef.current.srcObject = mediaStream;
             }
         } catch (err) {
-            setError('Камера қўй берилмади. Рухсат текширинг.');
-            console.error('Camera access error:', err);
-            setLoading(false);
+            console.error(err);
+            setError('Камерага рухсат берилмади');
         }
     };
 
     const stopCamera = () => {
-        if (videoRef.current && videoRef.current.srcObject) {
-            const stream = videoRef.current.srcObject as MediaStream;
-            stream.getTracks().forEach((track) => track.stop());
-            setCameraActive(false);
+        if (stream) {
+            stream.getTracks().forEach(track => track.stop());
+            setStream(null);
         }
     };
+
+    /* ======================
+       PHOTO CAPTURE
+    ====================== */
 
     const takePhoto = () => {
-        if (!videoRef.current || !canvasRef.current || !hiddenCanvasRef.current) {
-            setError('Canvas یا Video element ไม่พบ');
-            return;
-        }
+        if (!videoRef.current || !canvasRef.current || !hiddenCanvasRef.current) return;
 
-        const ctx = canvasRef.current.getContext('2d');
-        if (!ctx) {
-            setError('Canvas context ัรรม नई');
-            return;
-        }
+        const video = videoRef.current;
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
 
+        if (!ctx) return;
 
-        const videoWidth = videoRef.current.videoWidth;
-        const videoHeight = videoRef.current.videoHeight;
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
 
-        if (videoWidth === 0 || videoHeight === 0) {
-            setError('Video ҳозир йўқланди');
-            return;
-        }
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-        canvasRef.current.width = videoWidth;
-        canvasRef.current.height = videoHeight;
-
-        // Draw the video frame to canvas
-        ctx.drawImage(videoRef.current, 0, 0);
-
-        // Stop the camera stream
         stopCamera();
 
-        // Convert canvas to image and apply filters
-        const imageData = canvasRef.current.toDataURL('image/jpeg', 0.9);
-        const tempImg = new Image();
-
-        tempImg.onload = () => {
-            try {
-                const filteredData = applyNewspaperFilter(hiddenCanvasRef.current!, tempImg);
-                setPhotoData(filteredData);
-                onPhotoCapture?.(filteredData);
-            } catch (err) {
-                setError('Сурат қўлланилмади');
-                console.error('Photo filter error:', err);
-            }
+        const img = new Image();
+        img.onload = () => {
+            const filtered = applyNewspaperFilter(hiddenCanvasRef.current!, img);
+            setPhotoData(filtered);
+            onPhotoCapture?.(filtered);
         };
 
-        tempImg.onerror = () => {
-            setError('Image loading ўтказилмади');
-        };
-
-        tempImg.src = imageData;
-    };
-
-    const resetPhoto = () => {
-        setPhotoData(null);
-        setError(null);
+        img.src = canvas.toDataURL('image/jpeg', 0.95);
     };
 
     const retakePhoto = () => {
-        resetPhoto();
+        setPhotoData(null);
         startCamera();
     };
+
+    /* ======================
+       RENDER
+    ====================== */
 
     return (
         <div className="camera-block">
             {error && <div className="camera-error">{error}</div>}
 
-            {!cameraActive && !photoData && (
-                <div className="camera-placeholder">
-                    <div className="placeholder-icon">📷</div>
-                    <p>Ready to capture newspaper photo</p>
-                </div>
-            )}
-
-            {cameraActive && (
-                <div className="camera-container">
-                    <video
-                        ref={videoRef}
-                        autoPlay
-                        playsInline
-                        muted
-                        className="camera-video"
-                    />
-                    <div className="camera-frame-border" />
-                </div>
-            )}
-
-            {photoData && (
-                <div className="photo-container">
-                    <img src={photoData} alt="Captured newspaper photo" className="newspaper-photo" />
-                    <div className="photo-border" />
-                </div>
-            )}
-
-            <canvas ref={canvasRef} style={{ display: 'none' }} />
-            <canvas ref={hiddenCanvasRef} style={{ display: 'none' }} />
+            <div className="camera-view">
+                {!photoData ? (
+                    <div className="camera-video-wrapper">
+                        <video
+                            ref={videoRef}
+                            autoPlay
+                            playsInline
+                            muted
+                            className="camera-video"
+                        />
+                    </div>
+                ) : (
+                    <div className="photo-container">
+                        <img
+                            src={photoData}
+                            alt="Captured"
+                            className="newspaper-photo"
+                        />
+                        <div className="photo-border" />
+                    </div>
+                )}
+            </div>
 
             <div className="camera-controls">
-                {!cameraActive && !photoData && (
+                {!photoData && (
                     <button
-                        onClick={startCamera}
-                        disabled={loading}
                         className="btn-primary"
+                        onClick={stream ? takePhoto : startCamera}
                     >
-                        {loading ? 'Бошланмоқда...' : 'суратга олиш'}
+                        {stream ? '📸 Сурат олиш' : 'Камерани очиш'}
                     </button>
                 )}
 
-                {cameraActive && (
-                    <>
-                        <button onClick={takePhoto} className="btn-primary">
-                            📸 Сурат Олиш
-                        </button>
-                        <button onClick={stopCamera} className="btn-secondary">
-                            ✕ Бекор Қилиш
-                        </button>
-                    </>
-                )}
-
                 {photoData && (
-                    <>
-                        <button onClick={retakePhoto} className="btn-primary">
-                            🔄 Қайта Олиш
-                        </button>
-                        <button onClick={resetPhoto} className="btn-secondary">
-                            🗑 Ўчириш
-                        </button>
-                    </>
+                    <button className="btn-secondary" onClick={retakePhoto}>
+                        🔄 Қайта олиш
+                    </button>
                 )}
             </div>
+
+            <canvas ref={canvasRef} style={{ display: 'none' }} />
+            <canvas ref={hiddenCanvasRef} style={{ display: 'none' }} />
         </div>
     );
 }
