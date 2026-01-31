@@ -94,7 +94,7 @@ export default function NewspaperLayout() {
                             ўзгартириб, худди сўнги яширинчалик сақланиб қоладилар бўлди.
                             Ўлимлар ой қўлтиқлар эса қизиқарли жамиятга янги жараён килишибди ўтмасалиқ
                             василалар қўшимчалари асла керакли эмасми? Дўккон ишини ҳам, уй-турмушимизни ҳам,
-                            буюмларнинг дордии рўхи ҳам бизнинг қўлларимиз ўсимлик-бедарунда боғланган.
+                            буюмларнинг дордии рўхи ҳам бизнинг қўлларимиз ўсимлик-бедарунда боғланган. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium officia alias quia et sequi dolores velit, ratione hic ipsam laboriosam, tempora dicta quod corporis architecto quis eos fugiat nobis eum!
                         </p>
 
                     </div>
@@ -172,7 +172,7 @@ export default function NewspaperLayout() {
                             {/* <p>uNITY: THE ESSENCE
                                 OF SOCIETY IMPACT</p> */}
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eum est temporibus at libero, reprehenderit nisi quasi explicabo fugit, deleniti ipsam sapiente et mollitia quam ducimus. Iure voluptas libero asperiores!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eum est temporibus at libero, reprehenderit nisi quasi explicabo fugit, deleniti ipsam sapiente et mollitia quam ducimus. Iure voluptas libero asperiores! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam velit officia consequatur! Omnis at aspernatur accusantium dolorem molestiae magnam possimus. Deserunt, omnis accusamus. Vitae, veniam ea! Omnis quis dignissimos ullam.</p>
                     </div>
                     <img src="./castle2.svg" alt="" />
 

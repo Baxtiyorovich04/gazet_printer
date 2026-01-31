@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Momo+Trust+Display&family=Momo+Trust+Sans:wght@200..800&family=Montagu+Slab:opsz,wght@16..144,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* WRAPPER — ТОЛЬКО ДЛЯ ЭКРАНА */
 .newspaper-wrapper {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    background: #eee;
 }
 
 .print-button-container {
@@ -31,43 +36,45 @@
     background-color: #ddd0c0;
 }
 
-/* NEWSPAPER MAIN STYLES */
+/* NEWSPAPER — ЭТАЛОН A4 (210mm × 297mm) */
 .newspaper {
+    /* 🔴 КЛЮЧЕВОЕ: ТОЛЬКО МИЛЛИМЕТРЫ */
+    width: 210mm;
+    height: 297mm;
+
     background: #fdf6e3;
-    /* светлый газетный фон */
     color: #111;
     font-family: "Times New Roman", serif;
-    position: absolute;
-    aspect-ratio: 297 / 420;
-    height: 80vh;
-    /* для удобного просмотра */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1rem;
-    /* отступы на экране */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    /* Отступы — тоже в mm */
+    padding: 12mm;
+
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
     border: 1px solid #000;
-    overflow: hidden;
-    /* предотвращает выход текста за границы */
+
     line-height: 1.2;
-    font-size: 0.70em;
+    font-size: 11px;
+
+    /* ❌ НЕТ: position: absolute */
+    /* ❌ НЕТ: aspect-ratio */
+    /* ❌ НЕТ: height: 80vh */
+    /* ❌ НЕТ: transform: translate() */
 }
 
 /* MASTHEAD */
 .masthead {
     text-align: center;
-    border-bottom: 1px solid #1a1a1a;
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.4rem;
+    border-bottom: 3px solid #1a1a1a;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
 }
 
 .masthead-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.2rem;
-    font-size: 0.7em;
+    margin-bottom: 2px;
+    font-size: 9px;
     letter-spacing: 0.5px;
 }
 
@@ -75,47 +82,38 @@
 .edition-right {
     flex: 1;
     font-weight: 600;
-    font-family: 'Montagu Slab', serif;
+    font-family: Georgia, serif;
 }
 
 .masthead-title {
-    font-family: 'Montagu Slab', serif;
+    font-family: Georgia, serif;
     font-weight: 600;
-    font-size: 40px;
-    line-height: 100%;
+    font-size: 70px;
+    line-height: 1;
     text-transform: capitalize;
-    text-align: justify;
-    color: #000;
     text-align: center;
-    /* flex: 2;
-    font-size: 1.3em;
-    font-weight: 900;
-    letter-spacing: 0.5px;
-    line-height: 0.9;
-    margin: 0.05rem 0;
-    /* font-family: 'Playfair Display', Georgia, serif; */
-
+    color: #000;
+    margin: 0 0 3px 0;
 }
 
 .masthead-subtitle {
-    font-family: 'Montagu Slab', serif;
+    font-family: Georgia, serif;
     font-weight: bold;
-    font-size: 25px;
-    line-height: 100%;
+    font-size: 45px;
+    line-height: 1;
     text-transform: capitalize;
-    text-align: justify;
-    color: #000;
     text-align: center;
-    border-bottom: 1px solid #1a1a1a;
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.4rem;
+    color: #000;
+    border-bottom: 3px solid #1a1a1a;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
 }
 
 .masthead-details {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    font-size: 0.75em;
+    gap: 12mm;
+    font-size: 9px;
     letter-spacing: 0.3px;
 }
 
@@ -125,117 +123,101 @@
 
 .masthead-divider {
     border: none;
-    border-top: 2px solid #1a1a1a;
-    margin: 5px 0;
+    border-top: 3px solid #1a1a1a;
+    margin: 2px 0;
 }
 
-/* CONTENT GRID */
+/* CONTENT GRID — МИЛЛИМЕТРЫ */
 .content-grid {
     display: grid;
-    grid-template-columns: 120px 200px 120px;
-    gap: 10px;
-    margin: 0.5rem 0;
+    grid-template-columns: 45mm 80mm 45mm;
+    column-gap: 6mm;
+    margin: 3mm 0;
 }
 
-
+.column {
+    font-size: 10px;
+    line-height: 1.3;
+}
 
 .left-column {
-    width: 120px;
     border-right: 1px solid #1a1a1a;
-    padding-right: 10px;
+    padding-right: 3mm;
 }
-
-/* 
-.left-column,
-.right-column {
-    font-size: 0.92em;
-} */
 
 /* HEADINGS AND TYPOGRAPHY */
 .left-column-heading {
     font-family: 'Montagu Slab', serif;
     font-weight: 800;
-    line-height: 100%;
-    text-transform: capitalize;
-    text-align: justify;
-
+    font-size: 25px;
+    line-height: 1;
+    text-transform: uppercase;
     color: #000;
-    /* font-size: 0.80em;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    margin: 0.4rem 0 0.2rem 0;
-    padding-bottom: 0.1rem;
-    color: #000; */
 }
 
 .left-column-heading2 {
     font-family: 'Montagu Slab', serif;
     font-weight: 700;
-    font-size: 25px;
-    line-height: 100%;
+    font-size: 40px;
+    line-height: 1;
     text-transform: capitalize;
-    text-align: justify;
     color: #000;
 }
 
 .left-cloumn-img {
     width: 100%;
+    height: 135px;
+    display: block;
 }
 
 .right-column {
-    width: 120px;
     border-left: 1px solid #1a1a1a;
-    padding-left: 10px;
+    padding-left: 3mm;
 }
 
 .main-headline {
     font-family: 'Montagu Slab', serif;
-    /* font-size: 1.0em;
-    font-weight: 900;
-    letter-spacing: 0.2px;
-    line-height: 1.1;
-    margin: 0 0 0.2rem 0;
-    color: #000;
-    text-align: center; */
     font-weight: 700;
     font-size: 20px;
-    line-height: 100%;
+    line-height: 1.1;
     text-transform: uppercase;
     text-align: center;
     color: #000;
+    margin: 0 0 4px 0;
 }
 
 .byline {
     text-align: center;
     font-style: italic;
-    font-size: 0.65em;
+    font-size: 9px;
     color: #555;
-    margin-bottom: 0.2rem;
+    margin-bottom: 4px;
     font-family: 'Montserrat', sans-serif;
 }
 
 .right-column-heading {
     font-family: 'Montagu Slab', serif;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 100%;
+    font-weight: 600;
+    font-size: 31px;
+    line-height: 1;
     text-transform: uppercase;
     text-align: center;
     color: #000;
+    margin: 0 0 3px 0;
 }
 
 .right-column img {
     width: 100%;
+    height: 250px;
+    display: block;
 }
 
 .right-column p {
     font-family: 'Montserrat', sans-serif;
-    margin-top: 5px;
-
+    margin: 3px 0;
     font-weight: 400;
-    font-size: 10px;
-    line-height: 100%;
-    text-transform: lowercase;
+    font-size: 14px;
+    line-height: 1.2;
     text-align: justify;
     color: #000;
 }
@@ -246,175 +228,128 @@
 
 
 .column p {
-    /* margin: 0 0 0.3rem 0; */
-    margin-top: 5px;
+    margin: 3px 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 10px;
-    line-height: 100%;
-    text-transform: lowercase;
+    font-size: 14px;
+    line-height: 1.3;
     text-align: justify;
     color: #000;
-
-    .advertisement {
-        border: 1px solid #1a1a1a;
-        padding: 0.5rem;
-        margin-bottom: 0.6rem;
-        background-color: #f9f7f3;
-    }
-
-    .ad-title {
-        font-family: 'Montagu Slab', serif;
-        font-weight: 700;
-        font-size: 0.8em;
-        letter-spacing: 0.5px;
-        margin: 0 0 0.3rem 0;
-        border-bottom: 1px solid #1a1a1a;
-        padding-bottom: 0.2rem;
-        color: #000;
-    }
-
-    .ad-divider {
-        border: none;
-        border-top: 1px solid #ccc;
-        margin: 0.5rem 0;
-    }
-
-    /* FOOTER */
-    .newspaper-footer {
-        margin-top: 0.4rem;
-        padding-top: 0.3rem;
-        border-top: 2px double #1a1a1a;
-        text-align: center;
-        font-size: 0.6em;
-    }
-
-    .footer-divider {
-        border: none;
-        border-top: 1px solid #1a1a1a;
-        margin-bottom: 0.5rem;
-    }
-
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 0.3rem;
-        font-weight: 600;
-        letter-spacing: 0.3px;
-    }
-
-    .footer-middle {
-        flex: 1;
-        text-align: center;
-    }
-
-    .footer-text {
-        margin: 0.3rem 0 0 0;
-        font-size: 0.7em;
-        color: #666;
-        font-style: italic;
-    }
-
-
-
-    /* 
-@media (max-width: 1200px) {
-    .newspaper {
-        width: 100%;
-        max-width: 700px;
-        padding: 1.5rem 1.5rem;
-    }
-
-    .content-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .masthead-top {
-        font-size: 0.65em;
-    }
-
-    .masthead-title {
-        font-size: 1.6em;
-    }
-
-    .main-headline {
-        font-size: 1.1em;
-    }
-
-    .section-heading {
-        font-size: 0.85em;
-    }
-} */
 }
+
+.advertisement {
+    border: 1px solid #1a1a1a;
+    padding: 4px;
+    margin-bottom: 6px;
+    background-color: #f9f7f3;
+}
+
+.ad-title {
+    font-family: 'Montagu Slab', serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    margin: 0 0 3px 0;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 2px;
+    color: #000;
+}
+
+.ad-divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 4px 0;
+}
+
+/* FOOTER */
+.newspaper-footer {
+    margin-top: 4px;
+    padding-top: 3px;
+    border-top: 2px double #1a1a1a;
+    text-align: center;
+    font-size: 8px;
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.footer-middle {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 8px;
+    color: #666;
+    font-style: italic;
+}
+
 
 footer {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     border-top: 1px solid #1a1a1a;
-    padding-top: 5px;
+    padding-top: 4px;
+    gap: 6mm;
 }
 
 footer h1 {
+    font-family: 'Montagu Slab', serif;
     font-weight: 400;
-    font-size: 50px;
-    line-height: 100%;
+    font-size: 65px;
+    line-height: 1;
     text-transform: uppercase;
-    text-align: start;
+    text-align: left;
     color: #000;
+    margin: 0;
 }
 
 footer img {
-    width: 150px;
-    height: 120px;
-
+    width: 60mm;
+    height: auto;
+    max-height: 53mm;
+    object-fit: contain;
 }
 
 footer p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 100%;
-    text-transform: lowercase;
-    text-align: start;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: justify;
     color: #000;
+    margin: 0;
+    flex: 1;
+}
+
+/* МАСШТАБИРОВАНИЕ НА ЭКРАНЕ */
+@media screen {
+    .newspaper {
+        transform: scale(0.85);
+        transform-origin: top center;
+    }
 }
 
 @media (max-width: 768px) {
     .newspaper {
-        width: 100%;
-        padding: 1.5rem 1rem;
-        border: none;
-        box-shadow: none;
-    }
-
-    .masthead-title {
-        font-size: 2em;
-        letter-spacing: 2px;
-    }
-
-    .masthead-top {
-        flex-direction: column;
-        gap: 0.5rem;
-        font-size: 0.7em;
-    }
-
-    .price-left {
-        order: -1;
-    }
-
-    .main-headline {
-        font-size: 1.5em;
-    }
-
-    .column {
-        font-size: 0.9em;
+        transform: scale(0.6);
     }
 
     .content-grid {
-        gap: 1rem;
+        grid-template-columns: 1fr;
     }
 }
 
@@ -429,15 +364,14 @@ footer p {
 
     html,
     body {
-        width: 210mm;
-        height: 297mm;
+        margin: 0;
+        padding: 0;
         background-color: white;
-        overflow: hidden;
     }
 
     .newspaper-wrapper {
-        width: 100%;
-        height: 100%;
+        padding: 0;
+        background: none;
     }
 
     .print-button-container {
@@ -445,50 +379,17 @@ footer p {
     }
 
     .newspaper {
-        width: 210mm;
-        height: 297mm;
-        margin: 0;
-        padding: 10mm;
-        border: none;
-        box-shadow: none;
-        background-color: #fdf6e3;
-        position: static;
-        aspect-ratio: auto;
         transform: none;
-        top: auto;
-        left: auto;
-        overflow: hidden;
-        page-break-after: avoid;
-        page-break-inside: avoid;
-        display: flex;
-        flex-direction: column;
+        box-shadow: none;
+        border: none;
     }
 
-    .masthead {
-        border-bottom: 3px double #000;
-        flex-shrink: 0;
+    @page {
+        size: A4;
+        margin: 0;
     }
 
-    .masthead-divider {
-        border-top-color: #000;
-    }
-
-    .footer-divider {
-        border-top-color: #000;
-    }
-
-    .content-grid {
-        flex: 1;
-        overflow: hidden;
-        display: grid;
-        grid-template-columns: 0.8fr 1fr 0.8fr;
-    }
-
-    .newspaper-footer {
-        flex-shrink: 0;
-    }
-
-    /* Ensure images print properly */
+    /* Images in print */
     img {
         max-width: 100%;
         height: auto;
