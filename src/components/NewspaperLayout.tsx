@@ -3,13 +3,13 @@ import PrintButton from './PrintButton';
 import './NewspaperLayout.css';
 
 export default function NewspaperLayout() {
-    const today = new Date();
-    const dateString = today.toLocaleDateString('uz-UZ', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-    });
+    // const today = new Date();
+    // const dateString = today.toLocaleDateString('uz-UZ', {
+    //     weekday: 'long',
+    //     year: 'numeric',
+    //     month: 'long',
+    //     day: 'numeric',
+    // });
 
     const handlePhotoCapture = () => {
         // Photo is captured and displayed in camera block
@@ -22,8 +22,12 @@ export default function NewspaperLayout() {
 
             <article className="newspaper">
                 {/* MASTHEAD */}
+                <hr className="masthead-divider" />
+                <hr className="masthead-divider" />
                 <header className="masthead">
-                    <div className="masthead-top">
+                    <h1 className='masthead-title'>world news herald</h1>
+
+                    {/* <div className="masthead-top">
                         <div className="price-left">НАРХ: 1 СУМ</div>
                         <h1 className="masthead-title">ЎЗБЕКИСТОН ГАЗЕТА</h1>
                         <div className="edition-right">Ўр. 1890</div>
@@ -32,16 +36,19 @@ export default function NewspaperLayout() {
                     <div className="masthead-details">
                         <span>{dateString}</span>
                         <span className="edition">15-сон</span>
-                    </div>
+                    </div> */}
                 </header>
+                <h2 className='masthead-subtitle'>Around the world</h2>
 
-                <hr className="masthead-divider" />
+
 
                 {/* CONTENT GRID */}
                 <div className="content-grid">
                     {/* LEFT COLUMN */}
                     <div className="column left-column">
-                        <h3 className="section-heading">ХАБАРЛАР</h3>
+                        <h3 className="left-column-heading">ХАБАРЛАР</h3>
+                        <h2 className='left-column-heading2'>DOLOR</h2>
+                        <img className='left-cloumn-img' src="./plane.svg" alt="" />
                         <p>
                             Мамлакатнинг турли вилояларидан замонавий ишловер ва технология сохасидаги
                             муҳим хабарлар келмоқда. Иқтисодий ўсиш ва саноат сектори ривожланиши турли
@@ -52,7 +59,7 @@ export default function NewspaperLayout() {
                             энергия тежашлик технологияларини қўллап, самарадорликни ошириб бермоқда.
                         </p>
 
-                        <h3 className="section-heading" style={{ marginTop: '1.5rem' }}>
+                        {/* <h3 className="section-heading" style={{ marginTop: '1.5rem' }}>
                             СПОРТ ЯНГИЛИКЛАРИ
                         </h3>
                         <p>
@@ -68,44 +75,38 @@ export default function NewspaperLayout() {
                             Биргуна салтанатпўлак мадамннинг бағри махсус зиёфати фаврал ойида бўлиб
                             ўтди. Мамлакатнинг олий чинор сўвиларидан меҳмонлар келишиб, шодиёни ахвол
                             қўйнида сўнмоқда.
-                        </p>
+                        </p> */}
                     </div>
 
                     {/* CENTER COLUMN */}
                     <div className="column center-column">
-                        <h2 className="main-headline">
-                            ЗАМОНАВИЙ ТЕХНОЛОГИЯ ҒАЛАБА ҚИЛАДИ
-                        </h2>
-
-                        <div className="byline">Чифни сўз</div>
-
-                        <p className="lead-text">
-                            Илмий ғоялар амалий ишларга қўлланилиб, дўня ўзгараб бермоқда. Фотография,
-                            механика ва электр қўлланиш соҳасидаги янги ишланмалар кун-кунимиз ҳаётимизни
-                            ҳудди фарқли қиліб қўймоқда.
-                        </p>
 
                         {/* CAMERA/PHOTO BLOCK */}
                         <CameraBlock onPhotoCapture={handlePhotoCapture} />
+                        <h2 className="main-headline">
+                            CONSECTETUR
+                            ADIPISCING
+                        </h2>
 
-                        <p>
+                        <p >
                             Юқоридаги сурат замонавий давр йилариғдаги қадр қилиш лаёқатга эга. Сўратчилик
                             услубидан фойдаланиб, кўринишларини оддий қўлан-қўл қўлланилайдиганидан
                             ўзгартириб, худди сўнги яширинчалик сақланиб қоладилар бўлди.
-                        </p>
-
-                        <p>
                             Ўлимлар ой қўлтиқлар эса қизиқарли жамиятга янги жараён килишибди ўтмасалиқ
                             василалар қўшимчалари асла керакли эмасми? Дўккон ишини ҳам, уй-турмушимизни ҳам,
                             буюмларнинг дордии рўхи ҳам бизнинг қўлларимиз ўсимлик-бедарунда боғланган.
                         </p>
+
                     </div>
 
                     {/* RIGHT COLUMN */}
-                    <div className="column right-column">
-                        <h3 className="section-heading">РЕКЛАМА</h3>
-
-                        <div className="advertisement">
+                    <div className=" right-column">
+                        <h3 className="right-column-heading">22 january 2026</h3>
+                        <h3 className="right-column-heading">Excepteur
+                            sint</h3>
+                        <img src="./castle1.svg" alt="" />
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus impedit dolor architecto quam est obcaecati? Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, inventore.</p>
+                        {/* <div className="advertisement">
                             <p className="ad-title">ЁЗУВ ҚОЛАМЛАРИ</p>
                             <p style={{ fontSize: '0.9em', fontStyle: 'italic' }}>
                                 Беҳтрин ишчилик билан ясалган, унумли қоламлар ўқимиши қўл коннасидан
@@ -113,9 +114,9 @@ export default function NewspaperLayout() {
                             </p>
                         </div>
 
-                        <hr className="ad-divider" />
+                        <hr className="ad-divider" /> */}
 
-                        <div className="advertisement">
+                        {/* <div className="advertisement">
                             <p className="ad-title">СУРАТЧИЛИК ХИЗМАТЛАРИ</p>
                             <p style={{ fontSize: '0.9em', fontStyle: 'italic' }}>
                                 Замонавий қўрал-тақчиларда сурат олинади. Буюртма қўл бериш ҳозирда
@@ -130,9 +131,9 @@ export default function NewspaperLayout() {
                             <p style={{ fontSize: '0.9em', fontStyle: 'italic' }}>
                                 Қўйма қўйлоқ-қўпонлар. Ёш жилдлар тикланиши. Буюртма қабул қилинади.
                             </p>
-                        </div>
+                        </div> */}
 
-                        <h3 className="section-heading" style={{ marginTop: '2rem' }}>
+                        {/* <h3 className="section-heading" style={{ marginTop: '2rem' }}>
                             ОБУ-ҲАВОНИНГ ЭНДИ ҲОЛАТИ
                         </h3>
                         <p style={{ fontSize: '0.95em' }}>
@@ -147,12 +148,12 @@ export default function NewspaperLayout() {
                             Маргилонга: 11:30 ДМ<br />
                             Бухорага: 2:45 ДМ<br />
                             Бошқа қатор қўлай
-                        </p>
+                        </p> */}
                     </div>
                 </div>
 
                 {/* FOOTER */}
-                <footer className="newspaper-footer">
+                {/* <footer className="newspaper-footer">
                     <hr className="footer-divider" />
                     <div className="footer-content">
                         <span>1-саҳифа / 4</span>
@@ -163,8 +164,21 @@ export default function NewspaperLayout() {
                         Ҳар куни чоп қилинади. Хабарлар ва реклама ўз қўлдан қома бўлинади. Бизнес ҳуқуқлари
                         сохаланган.
                     </p>
+                </footer> */}
+                <footer>
+                    <div>
+                        <div>
+                            <h1>the society</h1>
+                            {/* <p>uNITY: THE ESSENCE
+                                OF SOCIETY IMPACT</p> */}
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eum est temporibus at libero, reprehenderit nisi quasi explicabo fugit, deleniti ipsam sapiente et mollitia quam ducimus. Iure voluptas libero asperiores!</p>
+                    </div>
+                    <img src="./castle2.svg" alt="" />
+
                 </footer>
             </article>
+
         </div>
     );
 }

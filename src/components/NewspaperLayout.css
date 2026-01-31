@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Momo+Trust+Display&family=Momo+Trust+Sans:wght@200..800&family=Montagu+Slab:opsz,wght@16..144,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 .newspaper-wrapper {
     width: 100%;
 }
@@ -55,7 +57,7 @@
 /* MASTHEAD */
 .masthead {
     text-align: center;
-    border-bottom: 2px double #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
     padding-bottom: 0.4rem;
     margin-bottom: 0.4rem;
 }
@@ -73,25 +75,40 @@
 .edition-right {
     flex: 1;
     font-weight: 600;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montagu Slab', serif;
 }
 
 .masthead-title {
-    flex: 2;
+    font-family: 'Montagu Slab', serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 100%;
+    text-transform: capitalize;
+    text-align: justify;
+    color: #000;
+    text-align: center;
+    /* flex: 2;
     font-size: 1.3em;
     font-weight: 900;
     letter-spacing: 0.5px;
     line-height: 0.9;
     margin: 0.05rem 0;
-    font-family: 'Playfair Display', Georgia, serif;
+    /* font-family: 'Playfair Display', Georgia, serif; */
+
 }
 
 .masthead-subtitle {
-    font-style: italic;
-    font-size: 0.8em;
-    color: #333;
+    font-family: 'Montagu Slab', serif;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 100%;
+    text-transform: capitalize;
+    text-align: justify;
+    color: #000;
+    text-align: center;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 0.4rem;
     margin-bottom: 0.4rem;
-    font-family: Georgia, serif;
 }
 
 .masthead-details {
@@ -109,48 +126,83 @@
 .masthead-divider {
     border: none;
     border-top: 2px solid #1a1a1a;
-    margin: 0.8rem 0;
+    margin: 5px 0;
 }
 
 /* CONTENT GRID */
 .content-grid {
     display: grid;
-    grid-template-columns: 0.8fr 1fr 0.8fr;
-    gap: 0.5rem;
+    grid-template-columns: 120px 200px 120px;
+    gap: 10px;
     margin: 0.5rem 0;
 }
 
-.column {
-    font-size: 0.95em;
-    line-height: 1.7;
+
+
+.left-column {
+    width: 120px;
+    border-right: 1px solid #1a1a1a;
+    padding-right: 10px;
 }
 
+/* 
 .left-column,
 .right-column {
     font-size: 0.92em;
-}
+} */
 
 /* HEADINGS AND TYPOGRAPHY */
-.section-heading {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 0.80em;
+.left-column-heading {
+    font-family: 'Montagu Slab', serif;
+    font-weight: 800;
+    line-height: 100%;
+    text-transform: capitalize;
+    text-align: justify;
+
+    color: #000;
+    /* font-size: 0.80em;
     font-weight: 700;
     letter-spacing: 0.3px;
     margin: 0.4rem 0 0.2rem 0;
-    border-bottom: 1px solid #1a1a1a;
     padding-bottom: 0.1rem;
+    color: #000; */
+}
+
+.left-column-heading2 {
+    font-family: 'Montagu Slab', serif;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 100%;
+    text-transform: capitalize;
+    text-align: justify;
     color: #000;
 }
 
+.left-cloumn-img {
+    width: 100%;
+}
+
+.right-column {
+    width: 120px;
+    border-left: 1px solid #1a1a1a;
+    padding-left: 10px;
+}
+
 .main-headline {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.0em;
+    font-family: 'Montagu Slab', serif;
+    /* font-size: 1.0em;
     font-weight: 900;
     letter-spacing: 0.2px;
     line-height: 1.1;
     margin: 0 0 0.2rem 0;
     color: #000;
+    text-align: center; */
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
     text-align: center;
+    color: #000;
 }
 
 .byline {
@@ -159,84 +211,114 @@
     font-size: 0.65em;
     color: #555;
     margin-bottom: 0.2rem;
-    font-family: Georgia, serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.lead-text {
-    font-size: 0.9em;
-    line-height: 1.5;
-    margin-bottom: 1rem;
+.right-column-heading {
+    font-family: 'Montagu Slab', serif;
     font-weight: 500;
-}
-
-.column p {
-    margin: 0 0 0.3rem 0;
-    text-align: justify;
-    font-size: 0.75em;
-}
-
-/* ADVERTISEMENTS */
-.advertisement {
-    border: 1px solid #1a1a1a;
-    padding: 0.5rem;
-    margin-bottom: 0.6rem;
-    background-color: #f9f7f3;
-}
-
-.ad-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 700;
-    font-size: 0.8em;
-    letter-spacing: 0.5px;
-    margin: 0 0 0.3rem 0;
-    border-bottom: 1px solid #1a1a1a;
-    padding-bottom: 0.2rem;
+    font-size: 18px;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-align: center;
     color: #000;
 }
 
-.ad-divider {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin: 0.5rem 0;
+.right-column img {
+    width: 100%;
 }
 
-/* FOOTER */
-.newspaper-footer {
-    margin-top: 0.4rem;
-    padding-top: 0.3rem;
-    border-top: 2px double #1a1a1a;
-    text-align: center;
-    font-size: 0.6em;
+.right-column p {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 100%;
+    text-transform: lowercase;
+    text-align: justify;
+    color: #000;
 }
 
-.footer-divider {
-    border: none;
-    border-top: 1px solid #1a1a1a;
-    margin-bottom: 0.5rem;
+.right-column .right-column-heading:nth-child(2) {
+    text-transform: capitalize;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.3rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-}
 
-.footer-middle {
-    flex: 1;
-    text-align: center;
-}
+.column p {
+    /* margin: 0 0 0.3rem 0; */
+    margin-top: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 100%;
+    text-transform: lowercase;
+    text-align: justify;
+    color: #000;
 
-.footer-text {
-    margin: 0.3rem 0 0 0;
-    font-size: 0.7em;
-    color: #666;
-    font-style: italic;
-}
+    .advertisement {
+        border: 1px solid #1a1a1a;
+        padding: 0.5rem;
+        margin-bottom: 0.6rem;
+        background-color: #f9f7f3;
+    }
 
-/* RESPONSIVE DESIGN */
+    .ad-title {
+        font-family: 'Montagu Slab', serif;
+        font-weight: 700;
+        font-size: 0.8em;
+        letter-spacing: 0.5px;
+        margin: 0 0 0.3rem 0;
+        border-bottom: 1px solid #1a1a1a;
+        padding-bottom: 0.2rem;
+        color: #000;
+    }
+
+    .ad-divider {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 0.5rem 0;
+    }
+
+    /* FOOTER */
+    .newspaper-footer {
+        margin-top: 0.4rem;
+        padding-top: 0.3rem;
+        border-top: 2px double #1a1a1a;
+        text-align: center;
+        font-size: 0.6em;
+    }
+
+    .footer-divider {
+        border: none;
+        border-top: 1px solid #1a1a1a;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.3rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+    }
+
+    .footer-middle {
+        flex: 1;
+        text-align: center;
+    }
+
+    .footer-text {
+        margin: 0.3rem 0 0 0;
+        font-size: 0.7em;
+        color: #666;
+        font-style: italic;
+    }
+
+
+
+    /* 
 @media (max-width: 1200px) {
     .newspaper {
         width: 100%;
@@ -264,6 +346,40 @@
     .section-heading {
         font-size: 0.85em;
     }
+} */
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 5px;
+}
+
+footer h1 {
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-align: start;
+    color: #000;
+}
+
+footer img {
+    width: 150px;
+    height: 120px;
+
+}
+
+footer p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    text-transform: lowercase;
+    text-align: start;
+    color: #000;
 }
 
 @media (max-width: 768px) {
@@ -301,6 +417,8 @@
         gap: 1rem;
     }
 }
+
+
 
 /* PRINT STYLES */
 @media print {

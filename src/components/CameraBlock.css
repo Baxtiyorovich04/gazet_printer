@@ -1,8 +1,3 @@
-.camera-block {
-    margin: 2rem 0;
-    padding: 0;
-}
-
 .camera-placeholder {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -42,7 +37,7 @@
 
 .camera-video {
     width: 100%;
-    height: 100%;
+    height: 200px;
     object-fit: cover;
     display: block;
 }
@@ -100,8 +95,8 @@
 .camera-controls {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
+
+
     flex-wrap: wrap;
     padding: 0 1rem;
 }
@@ -109,8 +104,8 @@
 .btn-primary,
 .btn-secondary {
     font-family: 'Georgia', serif;
-    padding: 8px 20px;
-    font-size: 0.95em;
+    padding: 4px 12px;
+    font-size: 0.85em;
     border: 1px solid #1a1a1a;
     background-color: #f5f1e8;
     color: #000;
