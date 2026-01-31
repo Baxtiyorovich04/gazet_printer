@@ -172,7 +172,7 @@ export default function NewspaperLayout() {
                             {/* <p>uNITY: THE ESSENCE
                                 OF SOCIETY IMPACT</p> */}
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eum est temporibus at libero, reprehenderit nisi quasi explicabo fugit, deleniti ipsam sapiente et mollitia quam ducimus. Iure voluptas libero asperiores! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam velit officia consequatur! Omnis at aspernatur accusantium dolorem molestiae magnam possimus. Deserunt, omnis accusamus. Vitae, veniam ea! Omnis quis dignissimos ullam.</p>
+                        <p>ro, reprehenderit nisi quasi explicabo fugit, deleniti ipsam sapiente et mollitia quam ducimus. Iure voluptas libero asperiores! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam velit officia consequatur! Omnis at aspernatur accusantium dolorem molestiae magnam possimus. Deserunt, omnis accusamus. Vitae, veniam ea! Omnis quis dignissimos ullam.</p>
                     </div>
                     <img src="./castle2.svg" alt="" />
 
