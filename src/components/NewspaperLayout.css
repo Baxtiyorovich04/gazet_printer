@@ -38,27 +38,40 @@
 
 /* NEWSPAPER — ЭТАЛОН A4 (210mm × 297mm) */
 .newspaper {
-    /* 🔴 КЛЮЧЕВОЕ: ТОЛЬКО МИЛЛИМЕТРЫ */
     width: 210mm;
     height: 297mm;
-
     background: #fdf6e3;
     color: #111;
     font-family: "Times New Roman", serif;
-
-    /* Отступы — тоже в mm */
     padding: 12mm;
-
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
     border: 1px solid #000;
-
     line-height: 1.2;
     font-size: 11px;
+}
 
-    /* ❌ НЕТ: position: absolute */
-    /* ❌ НЕТ: aspect-ratio */
-    /* ❌ НЕТ: height: 80vh */
-    /* ❌ НЕТ: transform: translate() */
+/* VARIANT v1 (default) */
+.newspaper.v1 {
+    background: #fdf6e3;
+}
+
+.newspaper.v1 .masthead-title {
+    color: #000;
+    font-style: normal;
+}
+
+/* VARIANT v2 */
+.newspaper.v2 {
+    background: #ffffff;
+}
+
+.newspaper.v2 .masthead-title {
+    color: #8b0000;
+    font-style: italic;
+}
+
+.newspaper.v2 .masthead-subtitle {
+    font-style: italic;
 }
 
 /* MASTHEAD */
@@ -335,7 +348,7 @@ footer p {
     flex: 1;
 }
 
-/* МАСШТАБИРОВАНИЕ НА ЭКРАНЕ */
+/* MASШТАБИРОВАНИЕ НА ЭКРАНЕ */
 @media screen {
     .newspaper {
         transform: scale(0.85);

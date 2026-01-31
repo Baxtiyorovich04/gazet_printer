@@ -1,0 +1,88 @@
+.viewer-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    background: #eee;
+}
+
+.viewer-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.viewer-controls button {
+    padding: 8px 16px;
+    font-size: 18px;
+    border: 1px solid #333;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.viewer-controls button:hover:not(:disabled) {
+    background: #f0f0f0;
+}
+
+.viewer-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.viewer-counter {
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 40px;
+    text-align: center;
+}
+
+.viewer-viewport {
+    width: 100%;
+    overflow: hidden;
+}
+
+.viewer-track {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.viewer-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+/* PRINT STYLES */
+@media print {
+    .viewer-wrapper {
+        padding: 0;
+        background: none;
+    }
+
+    .viewer-controls {
+        display: none;
+    }
+
+    .viewer-viewport {
+        overflow: visible;
+    }
+
+    .viewer-track {
+        transform: none !important;
+        display: block;
+    }
+
+    .viewer-slide {
+        min-width: auto;
+        display: none;
+        padding: 0;
+    }
+
+    .viewer-slide:first-child {
+        display: block;
+    }
+}
