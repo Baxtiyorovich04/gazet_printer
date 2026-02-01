@@ -1,12 +1,13 @@
 import './App.css'
 import NewspaperViewer from './components/NewspaperViewer'
-import NewspaperLayout from './components/NewspaperLayout'
+import NewspaperLayoutClassic from './components/NewspaperLayoutClassic'
+import NewspaperLayoutModern from './components/NewspaperLayoutModern'
 
 function App() {
   return (
     <NewspaperViewer>
-      <NewspaperLayout variant="v1" />
-      <NewspaperLayout variant="v2" />
+      <NewspaperLayoutClassic />
+      <NewspaperLayoutModern />
     </NewspaperViewer>
   )
 }
