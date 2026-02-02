@@ -62,7 +62,16 @@
 
 /* VARIANT v2 */
 .newspaper.v2 {
+    width: 210mm;
+    height: 297mm;
     background: #ffffff;
+    color: #111;
+    font-family: "Times New Roman", serif;
+    padding: 2mm;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid #000;
+    line-height: 1.2;
+    font-size: 11px;
 }
 
 .newspaper.v2 .masthead-title {
@@ -311,7 +320,7 @@
 }
 
 
-footer {
+.classicfooter {
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #1a1a1a;
@@ -319,7 +328,7 @@ footer {
     gap: 6mm;
 }
 
-footer h1 {
+.classicfooter h1 {
     font-family: 'Montagu Slab', serif;
     font-weight: 400;
     font-size: 65px;
@@ -330,14 +339,14 @@ footer h1 {
     margin: 0;
 }
 
-footer img {
+.classicfooter img {
     width: 60mm;
     height: auto;
     max-height: 53mm;
     object-fit: contain;
 }
 
-footer p {
+.classicfooter p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 16px;

@@ -1,0 +1,140 @@
+.modern-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modern-header h1 {
+    font-size: 100px;
+}
+
+.modern-header img {
+    height: 80px;
+    margin: 0 5px;
+}
+
+.modernHeaderBottom {
+    width: 100%;
+    height: 100px;
+    background: #8f9fa7;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.modernHeaderBottom h2 {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 100%;
+    text-align: justify;
+    color: #fdf00e;
+    text-align: center;
+}
+
+.modernHeaderBottom p {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-transform: lowercase;
+    text-align: justify;
+    color: #fff;
+
+}
+
+.HeaderBottomH1 {
+    font-weight: 500;
+    font-size: 75PX;
+    line-height: 100%;
+    text-transform: capitalize;
+    text-align: justify;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.headerp {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    text-transform: lowercase;
+    text-align: justify;
+    color: #000;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.modern-grid {
+    display: grid;
+    grid-template-columns: 200px 300px 200px;
+    gap: 5px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.text-column {
+    font-family: "Times New Roman", serif;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Фото по центру */
+.image-column {
+    display: flex;
+    justify-content: center;
+}
+
+/* Ограничение ширины фото */
+.image-column>* {
+    max-width: 360px;
+}
+
+/* .image {
+    width: 100%;
+    height: 600px;
+} */
+
+.modern-sec .camera-video {
+    height: 400px;
+}
+
+.modern-sec .newspaper-photo {
+    height: 400px;
+}
+
+.modern-sec .photo-container {
+    width: 300px;
+}
+
+.modern-sec .photo-container {
+    height: 400px;
+}
+
+/* .modern-sec .newspaper-photo {
+    height: 500px;
+} */
+.modern-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+
+}
+
+.modern-footer img {
+    height: 200px;
+}
+
+.modern-footer p {
+    margin: 3px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3;
+    text-align: justify;
+    color: #000;
+}

@@ -7,6 +7,7 @@ export default function NewspaperLayoutClassic() {
     };
 
     return (
+
         <NewspaperPage>
             <header className="masthead">
                 <h1 className="masthead-title">world news herald</h1>
@@ -50,7 +51,7 @@ export default function NewspaperLayoutClassic() {
                 </div>
             </div>
 
-            <footer>
+            <footer className='classicfooter'>
                 <div>
                     <div>
                         <h1>the society</h1>
