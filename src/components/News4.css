@@ -1,0 +1,329 @@
+/* ===== base safety: never overflow A4 ===== */
+.newspage-alt2,
+.newspage-alt2 * {
+    box-sizing: border-box;
+}
+
+.newspage-alt2 {
+    width: 100%;
+    max-width: 100%;
+    color: #000;
+}
+
+/* clip anything that tries to escape page */
+.newspaper-page {
+    overflow: hidden;
+}
+
+/* ===== top bar ===== */
+.alt2-topbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 1mm;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #000;
+    flex-wrap: wrap;
+}
+
+/* ===== header ===== */
+.alt2-header {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.alt2-kicker {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.alt2-title {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: 700;
+    font-size: 66px;
+    line-height: 1;
+    margin: 6px 0 8px;
+}
+
+.alt2-rule {
+    height: 2px;
+    background: #000;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 8px;
+}
+
+.alt2-subline {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ===== main grid: briefs | hero | sidebar ===== */
+.alt2-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.1fr) minmax(0, 1fr);
+    gap: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #000;
+    max-width: 100%;
+}
+
+/* briefs */
+.alt2-briefs {
+    padding-right: 10px;
+    border-right: 2px solid #000;
+}
+
+.alt2-section-title {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 20px;
+    margin: 0 0 8px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #000;
+}
+
+.alt2-brief h4 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 16px;
+    margin: 10px 0 4px;
+}
+
+.alt2-brief p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12.5px;
+    line-height: 1.25;
+    margin: 0;
+    text-align: justify;
+}
+
+.alt2-brief-divider {
+    height: 2px;
+    background: #000;
+    margin: 12px 0;
+}
+
+.alt2-quote p {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 13px;
+    margin: 0 0 6px;
+}
+
+.alt2-quote span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* hero */
+.alt2-hero {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    max-width: 100%;
+}
+
+.alt2-hero-media {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Force CameraBlock to fit (critical) */
+.newspage-alt2 .photo-container,
+.newspage-alt2 .camera-video,
+.newspage-alt2 .newspaper-photo {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.newspage-alt2 .camera-video,
+.newspage-alt2 .newspaper-photo {
+    max-height: 85mm;
+    object-fit: cover;
+}
+
+.alt2-hero-head h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 46px;
+    line-height: 1.02;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.alt2-hero-head h2 span {
+    font-style: italic;
+}
+
+.alt2-hero-head p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12.5px;
+    line-height: 1.25;
+    margin: 6px 0 0;
+    text-align: justify;
+}
+
+.alt2-hero-bottom {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 10px;
+    align-items: start;
+}
+
+/* stats */
+.alt2-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    border: 2px solid #000;
+    padding: 8px;
+}
+
+.alt2-stats strong {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 22px;
+    display: block;
+    line-height: 1;
+}
+
+.alt2-stats span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* pull box */
+.alt2-pull {
+    border: 2px solid #000;
+    padding: 8px 10px;
+}
+
+.alt2-pull h4 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 0 0 6px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.alt2-pull p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 1.25;
+    margin: 0;
+    text-align: justify;
+}
+
+/* sidebar */
+.alt2-sidebar {
+    padding-left: 10px;
+    border-left: 2px solid #000;
+}
+
+.alt2-box {
+    border: 2px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.alt2-box h4 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 15px;
+    margin: 0 0 6px;
+}
+
+.alt2-box p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 1.25;
+    margin: 0;
+    text-align: justify;
+}
+
+.alt2-minihead {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 12px 0 6px;
+}
+
+.alt2-list {
+    margin: 0;
+    padding-left: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+/* ===== lower columns ===== */
+.alt2-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    padding: 14px 0;
+    max-width: 100%;
+}
+
+.alt2-col h3 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 20px;
+    margin: 0 0 6px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #000;
+}
+
+.alt2-col p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12.5px;
+    line-height: 1.25;
+    margin: 0;
+    text-align: justify;
+}
+
+/* ===== footer ===== */
+.alt2-footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+    align-items: center;
+    border-top: 2px solid #000;
+    padding-top: 10px;
+    padding-bottom: 6mm;
+}
+
+.alt2-footer-left p,
+.alt2-footer-right p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.alt2-footer-center {
+    text-align: center;
+}
+
+.alt2-footer-center h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 26px;
+    letter-spacing: 4px;
+    margin: 6px 0;
+    text-transform: uppercase;
+}
+
+.alt2-footer-rule {
+    height: 1px;
+    background: #000;
+    width: 100%;
+}
