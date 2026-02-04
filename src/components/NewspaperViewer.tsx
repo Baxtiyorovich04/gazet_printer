@@ -22,7 +22,7 @@ export default function NewspaperViewer({ children }: NewspaperViewerProps) {
 
         printWindow.document.write('<html><head><title>Print</title>');
 
-        // подключаем все стили со страницы
+
         document.querySelectorAll('link[rel="stylesheet"], style').forEach(el => {
             printWindow!.document.write(el.outerHTML);
         });
