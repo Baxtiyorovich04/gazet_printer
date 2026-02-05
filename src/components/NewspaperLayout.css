@@ -40,7 +40,7 @@
 .newspaper {
     width: 210mm;
     height: 297mm;
-    background: #fdf6e3;
+    /* background: #fdf6e3; */
     color: #111;
     font-family: "Times New Roman", serif;
     padding: 8mm;
