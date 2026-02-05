@@ -76,7 +76,7 @@
 
 .newspage3 .camera-video {
     height: 300px;
-    width: 550px;
+    width: 735px;
 }
 
 .main-camera-sec3 h2 {
@@ -88,16 +88,17 @@
     color: #000;
     font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 60px;
+    display: none;
 }
 
 .newspage3 .newspaper-photo {
     height: 300px;
-    width: 550px;
+    width: 735px;
 }
 
 .newspage3 .photo-container {
     height: 300px;
-    width: 550px;
+    width: 735px;
 }
 
 .headerBottomsec img {
