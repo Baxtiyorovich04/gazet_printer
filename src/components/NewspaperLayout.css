@@ -41,6 +41,17 @@
     width: 210mm;
     height: 297mm;
     /* background: #fdf6e3; */
+    /* background-image:
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.02) 2px,
+            rgba(0, 0, 0, 0.02) 4px),
+        repeating-linear-gradient(90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.02) 2px,
+            rgba(0, 0, 0, 0.02) 4px); */
     color: #111;
     font-family: "Times New Roman", serif;
     padding: 8mm;
