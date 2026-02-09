@@ -13,7 +13,7 @@ import TravelBooking from './components/TravelBooking'
 function App() {
   const [hasBooking, setHasBooking] = useState(false)
 
-  const handleBookingSubmit = (data: TravelData) => {
+  const handleBookingSubmit = (_data: TravelData) => {
     setHasBooking(true)
   }
 
