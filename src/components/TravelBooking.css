@@ -262,6 +262,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    justify-content: center;
     margin-bottom: 15px;
     padding-bottom: 12px;
     border-bottom: 2px solid #e0d5c7;
@@ -283,6 +284,7 @@
 .section-description {
     font-size: 13px;
     color: #5c5c5c;
+    text-align: center;
     margin: 0 0 15px 0;
     line-height: 1.6;
     font-style: italic;
@@ -326,6 +328,12 @@
     animation: slideInVintage 0.3s ease-out;
     color: #1a1a1a;
     font-weight: 600;
+}
+
+.vintage_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes slideInVintage {
@@ -715,6 +723,8 @@
     right: -2px;
     bottom: 10px;
 }
+
+
 
 @media (max-width: 600px) {
     .vintage-card {

@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { FaMapPin, FaCalendar, FaPlane, FaUser, FaUsers, FaNewspaper } from 'react-icons/fa6';
+import type { MouseEvent } from 'react';
+import { FaMapPin, FaPlane, FaUser, FaUsers, FaNewspaper } from 'react-icons/fa6';
+import { FaMoneyBillWave } from 'react-icons/fa6';
 import { MdOutlineNavigateNext, MdNavigateBefore } from 'react-icons/md';
 import './TravelBooking.css';
 import { FaGlobeEurope } from "react-icons/fa";
@@ -41,7 +43,7 @@ export default function TravelBooking({ onSubmit }: TravelBookingProps) {
     const [selectedDestination, setSelectedDestination] = useState('');
     const [tourType, setTourType] = useState<'solo' | 'duo' | 'group'>('solo');
     const [numberOfPeople, setNumberOfPeople] = useState(1);
-    const [date, setDate] = useState('');
+    const [moneyInserted, setMoneyInserted] = useState(false);
     const [step, setStep] = useState(1);
 
     const handleDestinationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -58,9 +60,17 @@ export default function TravelBooking({ onSubmit }: TravelBookingProps) {
         setNumberOfPeople(Math.max(1, Math.min(value, 20)));
     };
 
-    const handleSubmit = () => {
-        if (!selectedDestination || !date) {
-            alert('Please fill all fields');
+    const checkHardwareForMoney = async (): Promise<boolean> => {
+        // Placeholder for actual hardware integration.
+        // Replace with real device check when available.
+        return Promise.resolve(false);
+    };
+
+    const handleSubmit = (arg?: boolean | MouseEvent<HTMLButtonElement>) => {
+        const overrideMoneyInserted = typeof arg === 'boolean' ? arg : false;
+        const paid = moneyInserted || overrideMoneyInserted;
+        if (!selectedDestination || !paid) {
+            alert('Please select a destination and insert money');
             return;
         }
 
@@ -68,7 +78,7 @@ export default function TravelBooking({ onSubmit }: TravelBookingProps) {
             destination: selectedDestination,
             tourType,
             numberOfPeople,
-            date,
+            date: ''
         };
 
         // Log to console
@@ -76,9 +86,14 @@ export default function TravelBooking({ onSubmit }: TravelBookingProps) {
         console.log('From: Uzbekistan');
         console.log('Tour Type:', tourType.toUpperCase());
         console.log('Travelers:', numberOfPeople);
-        console.log('Departure Date:', new Date(date).toLocaleDateString());
+        console.log('Payment status:', paid ? 'PAID' : 'UNPAID');
 
         onSubmit(travelData);
+    };
+
+    const simulateInsertAndProceed = () => {
+        setMoneyInserted(true);
+        handleSubmit(true);
     };
 
     return (
@@ -106,7 +121,7 @@ export default function TravelBooking({ onSubmit }: TravelBookingProps) {
                 <div className="vintage-steps">
                     <div className={`vintage-step ${step >= 1 ? 'active' : ''}`}>
                         <div className="step-circle">1</div>
-                        <p>Select Destination</p>
+                        <p>To where?</p>
                     </div>
                     <div className="step-connector"></div>
                     <div className={`vintage-step ${step >= 2 ? 'active' : ''}`}>
@@ -116,7 +131,7 @@ export default function TravelBooking({ onSubmit }: TravelBookingProps) {
                     <div className="step-connector"></div>
                     <div className={`vintage-step ${step >= 3 ? 'active' : ''}`}>
                         <div className="step-circle">3</div>
-                        <p>Departure Date</p>
+                        <p>Payment</p>
                     </div>
                 </div>
 
@@ -213,28 +228,33 @@ export default function TravelBooking({ onSubmit }: TravelBookingProps) {
                     {step === 3 && (
                         <div className="step-content vintage-fade-in">
                             <div className="section-header">
-                                <FaCalendar className="section-icon" />
-                                <h2>WHEN SHALL WE DEPART?</h2>
+                                <FaMoneyBillWave className="section-icon" />
+                                <h2>INSERT MONEY</h2>
                             </div>
-                            <p className="section-description">Select your desired departure date from Uzbekistan.</p>
+                            <p className="section-description">Please insert money into the machine to proceed.</p>
 
-                            <input
-                                type="date"
-                                value={date}
-                                onChange={(e) => setDate(e.target.value)}
-                                className="vintage-date-input"
-                                min={new Date().toISOString().split('T')[0]}
-                            />
+                            <div className="vintage-payment-controls vintage_buttons">
+                                <button className="vintage-btn-insert" onClick={simulateInsertAndProceed}>I INSERTED</button>
+                                <button
+                                    className="vintage-btn-check"
+                                    onClick={async () => {
+                                        const ok = await checkHardwareForMoney();
+                                        if (ok) {
+                                            setMoneyInserted(true);
+                                            handleSubmit(true);
+                                        } else {
+                                            alert('No money detected by hardware. Use "I INSERTED" to simulate.');
+                                        }
+                                    }}
+                                >
+                                    CHECK HARDWARE
+                                </button>
+                            </div>
 
-                            {date && (
+                            {moneyInserted && (
                                 <div className="vintage-preview date-preview">
-                                    <FaCalendar className="preview-icon" />
-                                    <span>{new Date(date).toLocaleDateString('en-US', {
-                                        weekday: 'long',
-                                        year: 'numeric',
-                                        month: 'long',
-                                        day: 'numeric'
-                                    })}</span>
+                                    <FaMoneyBillWave className="preview-icon" />
+                                    <span>Payment received</span>
                                 </div>
                             )}
                         </div>
@@ -261,12 +281,7 @@ export default function TravelBooking({ onSubmit }: TravelBookingProps) {
                             <span className="label">TRIP TYPE:</span>
                             <span className="value">{tourType.toUpperCase()} ({numberOfPeople} {numberOfPeople === 1 ? 'traveler' : 'travelers'})</span>
                         </div>
-                        {date && (
-                            <div className="summary-row">
-                                <span className="label">DATE:</span>
-                                <span className="value">{new Date(date).toLocaleDateString()}</span>
-                            </div>
-                        )}
+
                     </div>
                 </div>
 
