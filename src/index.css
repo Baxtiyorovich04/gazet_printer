@@ -5,11 +5,11 @@
 }
 
 :root {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Cormorant Garamond', 'Lora', Georgia, serif;
   line-height: 1.6;
   font-weight: 400;
-  color: #1a1a1a;
-  background-color: #f5f1e8;
+  color: #0a0a0a;
+  background-color: #e5e2dc;
 }
 
 html,
@@ -23,7 +23,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding: 20px;
-  background-color: #f5f1e8;
+  background-color: #e5e2dc;
 }
 
 #root {

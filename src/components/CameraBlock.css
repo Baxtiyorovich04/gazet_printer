@@ -1,73 +1,48 @@
-.camera-placeholder {
+/* CameraBlock — Premium portrait frame for editorial design */
+
+.camera-block {
+    position: relative;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    background-color: #e8e0d0;
-    border: 2px solid #1a1a1a;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    color: #666;
-    font-family: 'Georgia', serif;
-    font-size: 1.1em;
-    position: relative;
 }
 
-.placeholder-icon {
-    font-size: 2.5em;
-    margin-bottom: 0.5rem;
-    opacity: 0.5;
-}
-
-.camera-placeholder p {
-    margin: 0;
-    color: #999;
-    font-size: 0.95em;
-    font-style: italic;
-}
-
-.camera-container {
+.camera-view {
     position: relative;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    background-color: #000;
+    background: #f5f3ef;
     overflow: hidden;
-    border: 2px solid #1a1a1a;
+}
+
+.camera-video-wrapper {
+    width: 100%;
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .camera-video {
     width: 100%;
-    height: 200px;
     object-fit: cover;
     display: block;
-}
-
-.camera-frame-border {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 2px solid #1a1a1a;
-    pointer-events: none;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
 .photo-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    background-color: #fff;
+    background: #fff;
     overflow: hidden;
-    border: 2px solid #1a1a1a;
 }
 
 .newspaper-photo {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
     display: block;
-    filter: grayscale(100%);
+    filter: grayscale(20%) contrast(1.03);
 }
 
 .photo-border {
@@ -76,18 +51,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border: 2px solid #1a1a1a;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     pointer-events: none;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 .camera-error {
-    background-color: #f4e8e0;
-    border: 1px solid #d4bfb0;
-    color: #8b4513;
+    background-color: #f8f4f0;
+    border: 1px solid #d4c4b0;
+    color: #6b5344;
     padding: 1rem;
     margin-bottom: 1rem;
-    font-family: 'Georgia', serif;
+    font-family: var(--font-body, 'Georgia', serif);
     font-size: 0.95em;
     text-align: center;
 }
@@ -95,28 +70,27 @@
 .camera-controls {
     display: flex;
     justify-content: center;
-
-
     flex-wrap: wrap;
-    padding: 0 1rem;
+    padding: 12px 1rem 0;
+    gap: 8px;
 }
 
 .btn-primary,
 .btn-secondary {
-    font-family: 'Georgia', serif;
-    padding: 4px 12px;
-    font-size: 0.85em;
-    border: 1px solid #1a1a1a;
-    background-color: #f5f1e8;
-    color: #000;
+    font-family: var(--font-body, 'Cormorant Garamond', 'Georgia', serif);
+    padding: 6px 16px;
+    font-size: 0.9em;
+    border: 1px solid var(--ink, #0a0a0a);
+    background-color: var(--paper-warm, #f8f6f1);
+    color: var(--ink, #0a0a0a);
     cursor: pointer;
     transition: all 0.2s ease;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .btn-primary {
-    background-color: #1a1a1a;
-    color: #f5f1e8;
+    background-color: var(--ink, #0a0a0a);
+    color: var(--paper-warm, #f8f6f1);
     font-weight: 600;
 }
 
@@ -135,19 +109,20 @@
 }
 
 .btn-secondary {
-    background-color: #f5f1e8;
-    color: #1a1a1a;
+    background-color: var(--paper-warm, #f8f6f1);
+    color: var(--ink, #0a0a0a);
 }
 
 .btn-secondary:hover {
-    background-color: #e8e0d0;
-    border-color: #1a1a1a;
+    background-color: var(--accent-beige, #e8e4dc);
+    border-color: var(--ink, #0a0a0a);
 }
 
 .btn-secondary:active {
-    background-color: #ddd0c0;
+    background-color: #ddd8ce;
 }
 
+/* Print: hide controls, ensure clean output */
 @media print {
     .camera-block {
         margin: 0;
@@ -157,19 +132,13 @@
         display: none !important;
     }
 
-    .camera-placeholder,
-    .camera-container,
     .photo-container,
-    .newspaper-photo {
-        border-color: #000 !important;
+    .camera-video-wrapper {
+        border: 1px solid rgba(0, 0, 0, 0.15) !important;
         box-shadow: none !important;
     }
 
-    .photo-container {
-        background-color: #fff !important;
-    }
-
     .newspaper-photo {
-        filter: none !important;
+        filter: grayscale(15%) contrast(1.02) !important;
     }
 }

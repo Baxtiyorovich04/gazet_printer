@@ -1,12 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Momo+Trust+Display&family=Momo+Trust+Sans:wght@200..800&family=Montagu+Slab:opsz,wght@16..144,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900&family=Lora:ital,wght@0,400;0,500;0,600&family=Momo+Trust+Sans:wght@200..800&family=Montagu+Slab:opsz,wght@16..144,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* WRAPPER — ТОЛЬКО ДЛЯ ЭКРАНА */
+:root {
+    --paper: #faf8f4;
+    --paper-warm: #f8f6f1;
+    --ink: #0a0a0a;
+    --ink-muted: #3d3d3d;
+    --accent-gold: #b8860b;
+    --accent-gold-soft: #c9a227;
+    --accent-beige: #e8e4dc;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Cormorant Garamond', 'Lora', Georgia, serif;
+    --font-meta: 'Lora', Georgia, serif;
+}
+
+/* WRAPPER */
 .newspaper-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 40px 0;
-    background: #eee;
+    background: #e5e2dc;
 }
 
 .print-button-container {
@@ -16,49 +29,45 @@
 }
 
 .btn-print {
-    font-family: 'Georgia', serif;
+    font-family: var(--font-body);
     font-size: 0.95em;
     padding: 8px 20px;
-    border: 1px solid #666;
-    background-color: #f5f1e8;
-    color: #333;
+    border: 1px solid var(--ink);
+    background-color: var(--paper-warm);
+    color: var(--ink);
     cursor: pointer;
     transition: all 0.2s ease;
     letter-spacing: 0.5px;
 }
 
 .btn-print:hover {
-    background-color: #e8e0d0;
-    border-color: #333;
+    background-color: var(--accent-beige);
+    border-color: var(--ink);
 }
 
 .btn-print:active {
-    background-color: #ddd0c0;
+    background-color: #ddd8ce;
 }
 
-/* NEWSPAPER — ЭТАЛОН A4 (210mm × 297mm) */
+/* NEWSPAPER — A4 with paper texture & cinematic shadow */
 .newspaper {
     width: 210mm;
     height: 297mm;
-    /* background: #fdf6e3; */
-    /* background-image:
-        repeating-linear-gradient(0deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 0, 0, 0.02) 2px,
-            rgba(0, 0, 0, 0.02) 4px),
-        repeating-linear-gradient(90deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 0, 0, 0.02) 2px,
-            rgba(0, 0, 0, 0.02) 4px); */
-    color: #111;
-    font-family: "Times New Roman", serif;
-    padding: 8mm;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-    border: 1px solid #000;
-    line-height: 1.2;
+    background-color: var(--paper);
+    background-image:
+        linear-gradient(180deg, rgba(0,0,0,0.008) 0%, transparent 50%, rgba(0,0,0,0.015) 100%);
+    color: var(--ink);
+    font-family: var(--font-body);
+    padding: 10mm 12mm;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.07),
+        0 12px 24px rgba(0, 0, 0, 0.12),
+        0 24px 48px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    line-height: 1.4;
     font-size: 11px;
+    position: relative;
+    overflow: hidden;
 }
 
 /* VARIANT v1 (default) */
@@ -368,7 +377,195 @@
     flex: 1;
 }
 
-/* MASШТАБИРОВАНИЕ НА ЭКРАНЕ */
+/* ===== EDITORIAL PAGE (Classic) — Premium front page ===== */
+.editorial-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
+.editorial-meta {
+    font-family: var(--font-meta);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+}
+
+.editorial-meta-divider {
+    margin: 0 6px;
+    opacity: 0.5;
+}
+
+.editorial-masthead {
+    text-align: center;
+    margin-bottom: 14mm;
+}
+
+.editorial-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 52px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1;
+}
+
+.editorial-rule {
+    width: 40px;
+    height: 2px;
+    background: var(--accent-gold);
+    margin: 8px auto 6px;
+}
+
+.editorial-tagline {
+    font-family: var(--font-meta);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 0;
+}
+
+.editorial-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12mm;
+    min-height: 0;
+}
+
+.editorial-headline-block {
+    text-align: center;
+}
+
+.editorial-kicker {
+    font-family: var(--font-meta);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.editorial-headline {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: var(--ink);
+    margin: 0 0 8px;
+}
+
+.editorial-subheadline {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--ink-muted);
+    margin: 0;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.editorial-portrait-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 75mm;
+}
+
+.editorial-portrait-frame .camera-block {
+    width: 75mm;
+    max-width: 100%;
+}
+
+.editorial-portrait-frame .camera-view {
+    width: 75mm;
+    height: 95mm;
+    aspect-ratio: 3/4;
+}
+
+.editorial-portrait-frame .camera-video-wrapper {
+    width: 75mm !important;
+    height: 95mm !important;
+    aspect-ratio: 3/4;
+}
+
+.editorial-portrait-frame .camera-video {
+    width: 75mm !important;
+    height: 95mm !important;
+    object-fit: cover;
+}
+
+.editorial-portrait-frame .photo-container {
+    width: 75mm !important;
+    height: 95mm !important;
+    aspect-ratio: 3/4;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.editorial-portrait-frame .newspaper-photo {
+    width: 75mm !important;
+    height: 95mm !important;
+    object-fit: cover;
+    filter: grayscale(30%) contrast(1.05);
+}
+
+.portrait-caption {
+    font-family: var(--font-meta);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 6px;
+}
+
+.editorial-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10mm;
+    font-size: 11px;
+}
+
+.editorial-col p {
+    font-family: var(--font-body);
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0 0 8px;
+    text-align: justify;
+}
+
+.editorial-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    font-family: var(--font-meta);
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+
+.editorial-footer-left,
+.editorial-footer-right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* SCREEN SCALING */
 @media screen {
     .newspaper {
         transform: scale(0.85);
@@ -399,7 +596,7 @@
     body {
         margin: 0;
         padding: 0;
-        background-color: white;
+        background-color: var(--paper, #faf8f4);
     }
 
     .newspaper-wrapper {
@@ -415,6 +612,7 @@
         transform: none;
         box-shadow: none;
         border: none;
+        background-color: var(--paper, #faf8f4);
     }
 
     @page {
@@ -422,21 +620,15 @@
         margin: 0;
     }
 
-    /* Images in print */
     img {
         max-width: 100%;
         height: auto;
         page-break-inside: avoid;
     }
 
-    /* Prevent page breaks inside content */
-    .column {
+    .column,
+    .editorial-portrait-frame,
+    .editorial-main {
         page-break-inside: avoid;
-    }
-
-    /* Optimize for A4 paper */
-    @page {
-        size: A4;
-        margin: 0;
     }
 }
