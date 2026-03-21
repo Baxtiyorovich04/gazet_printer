@@ -161,7 +161,10 @@ export default function NewspaperLayoutModern() {
                 </div>
 
                 <footer className="modern-footer">
-                    <span>© 2026 The Chronicle · Printed in Tashkent</span>
+                    <div className="footer-contact">
+                        <span>© 2026 The Chronicle · Printed in Tashkent</span>
+                        <span>Contact: editor@chronicle.uz · +998 71 123 45 67 · chronicle.uz</span>
+                    </div>
                 </footer>
             </div>
         </NewspaperPage>

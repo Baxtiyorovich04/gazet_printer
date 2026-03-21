@@ -46,10 +46,10 @@
 
 .editorial-page3-hero {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6mm;
-    margin-bottom: 8mm;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3mm;
+    margin-bottom: 6mm;
 }
 
 .editorial-page3-portrait {
@@ -74,14 +74,64 @@
     object-fit: cover;
 }
 
+.editorial-page3-hero-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
+.editorial-page3-hero-kicker {
+    font-family: var(--font-meta);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+
+.editorial-page3-hero-headline {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0;
+    color: var(--ink);
+}
+
 .editorial-page3-hero-text {
     font-family: var(--font-body);
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.5;
     color: var(--ink);
-    text-align: center;
-    max-width: 90%;
-    margin: 0 auto;
+    text-align: left;
+    max-width: 100%;
+    margin: 0;
+}
+
+.editorial-page3-hero-bullets {
+    margin: 0;
+    padding-left: 14px;
+    font-family: var(--font-body);
+    font-size: 10px;
+    line-height: 1.4;
+    color: var(--ink);
+}
+
+.editorial-page3-hero-bullets li {
+    margin-bottom: 2px;
+}
+
+.editorial-page3-hero-quote {
+    margin-top: 4px;
+    padding: 6px 8px;
+    border-left: 3px solid var(--accent-gold);
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 11px;
+    line-height: 1.35;
+    color: var(--ink);
 }
 
 .page3-content-block {
@@ -120,7 +170,8 @@
 /* Right sidebar */
 .page3-right {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 8px;
 }
 
@@ -239,6 +290,30 @@
     color: var(--ink-muted);
 }
 
+.page3-sidebar-fill {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.page3-sidebar-fill .page3-sidebar-title {
+    font-size: 8px;
+    margin: 10px 0 4px;
+}
+
+.page3-sidebar-fill .page3-sidebar-title:first-child {
+    margin-top: 0;
+}
+
+.page3-sidebar-fill p {
+    font-family: var(--font-body);
+    font-size: 9px;
+    line-height: 1.4;
+    margin: 0 0 8px;
+    color: var(--ink-muted);
+    text-align: justify;
+}
+
 /* Bottom text */
 .page3-bottom-text {
     padding: 8px 0;
@@ -255,6 +330,12 @@
     margin: 0;
     text-align: justify;
     color: var(--ink);
+}
+
+.editorial-page3-footer .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .editorial-page3-footer {

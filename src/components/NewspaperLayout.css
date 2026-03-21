@@ -565,6 +565,18 @@
     align-items: center;
 }
 
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.footer-contact span {
+    font-size: 8px;
+    letter-spacing: 0.5px;
+    text-transform: none;
+}
+
 /* SCREEN SCALING */
 @media screen {
     .newspaper {

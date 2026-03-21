@@ -21,7 +21,7 @@ export default function Newspaper3() {
 
                 <header className="editorial-masthead editorial-page3-masthead">
                     <div className="page3-rule page3-rule-left" />
-                    <h1 className="editorial-title editorial-page3-title">Around the World</h1>
+                    <h1 className="editorial-title editorial-page3-title">Absolutely Nothing Happened Today</h1>
                     <div className="page3-rule page3-rule-right" />
                 </header>
 
@@ -34,9 +34,28 @@ export default function Newspaper3() {
                                 <CameraBlock onPhotoCapture={handlePhotoCapture} />
                                 <div className="portrait-caption">Featured · Tashkent 2026</div>
                             </div>
-                            <p className="editorial-page3-hero-text">
-                                When presence speaks louder than words — a portrait of quiet power in the heart of the city.
-                            </p>
+                            <div className="editorial-page3-hero-text-block">
+                                <span className="editorial-page3-hero-kicker">PORTRAIT</span>
+                                <h3 className="editorial-page3-hero-headline">
+                                    When presence speaks louder than words
+                                </h3>
+                                <p className="editorial-page3-hero-text">
+                                    A portrait of quiet power in the heart of the city. In Tashkent's cafés and streets,
+                                    a new rhythm emerges: fewer promises, more plans.
+                                </p>
+                                <ul className="editorial-page3-hero-bullets">
+                                    <li>The strongest voices don't chase attention — they perform reliably</li>
+                                    <li>Calm isn't weakness; it's independence</li>
+                                    <li>Self-contained identity builds trust</li>
+                                </ul>
+                                <p className="editorial-page3-hero-text">
+                                    The city breathes differently now. Editors note the shift — from seeking approval
+                                    to building competence. Control is rarely a punch; it's usually a promise kept.
+                                </p>
+                                <div className="editorial-page3-hero-quote">
+                                    "A person who needs nothing can't be controlled."
+                                </div>
+                            </div>
                         </div>
 
                         <div className="page3-content-block">
@@ -114,6 +133,15 @@ export default function Newspaper3() {
                             <span>Quiet Power series · p.A4</span>
                             <span>Portrait gallery · p.B2</span>
                         </div>
+
+                        <div className="page3-sidebar-fill">
+                            <div className="page3-sidebar-title">FROM THE ARCHIVES</div>
+                            <p>"The quietest person in the room is either the smartest or forgot their coffee." — 2024</p>
+                            <div className="page3-sidebar-title">LETTERS</div>
+                            <p>Re: Quiet Power — "I tried saying less. My mother called to check if I was dead." — Reader, Tashkent</p>
+                            <div className="page3-sidebar-title">FINAL THOUGHT</div>
+                            <p>Calm isn't a personality. It's practice. Or exhaustion. We're still running tests.</p>
+                        </div>
                     </div>
                 </section>
 
@@ -133,13 +161,9 @@ export default function Newspaper3() {
                 </div>
 
                 <footer className="editorial-footer editorial-page3-footer">
-                    <div className="editorial-footer-left">
-                        <span>© 2026</span>
-                        <span>·</span>
-                        <span>Tashkent</span>
-                    </div>
-                    <div className="editorial-footer-right">
-                        <span>UZS 12 000</span>
+                    <div className="footer-contact">
+                        <span>© 2026 · Tashkent · UZS 12 000</span>
+                        <span>Contact: editor@chronicle.uz · +998 71 123 45 67 · Amir Temur St. 1</span>
                     </div>
                 </footer>
             </div>

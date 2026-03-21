@@ -66,6 +66,13 @@ export default function News5() {
                                         <li>vaqt — eng qimmat resurs sifatida ko'riladi</li>
                                     </ul>
                                 </div>
+                                <div className="news5-mini-card">
+                                    <div className="news5-mini-title">Tahlil</div>
+                                    <p>
+                                        Ma'qullashga qaramlik — nazoratga eshik. O'zingizni kimningdir "bahosi" bilan
+                                        o'lchashni kamaytirsangiz, bosim ham kamayadi. "Hech narsaga muhtoj bo'lmagan odam — hech kim tomonidan boshqarilmaydigan odam."
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
@@ -77,6 +84,18 @@ export default function News5() {
                             <p>
                                 "Tinch kuch" degani sovuqqonlik emas. Bu — o'zingni boshqarish. Biror narsani
                                 isbotlash uchun emas, o'zing belgilagan standartlar uchun ishlash.
+                            </p>
+                            <h4 className="news5-lead-subhead">Mutaxassislar nima deyadi</h4>
+                            <p>
+                                Rejalar yoziladi, bahonalar kamayadi. "Ha" va "yo'q" aniq aytiladi. Vaqt eng qimmat
+                                resurs sifatida ko'riladi. Bu tendensiya "chegaralar madaniyati" deb ataladi.
+                            </p>
+                            <div className="news5-lead-quote">
+                                "Hech narsaga muhtoj bo'lmagan odam — hech kim tomonidan boshqarilmaydigan odam."
+                            </div>
+                            <p>
+                                Tinch kuch — bu amaliyot. Siz bahsda g'alaba qozonish orqali mustahkam bo'lmaysiz.
+                                O'zingni boshqarish, cheklovlarni saqlash va vaqtni qadrlash — asosiy belgilar.
                             </p>
                         </div>
                     </section>
@@ -109,18 +128,46 @@ export default function News5() {
                                 "Hech narsaga muhtoj bo'lmagan odam — hech kim tomonidan boshqarilmaydigan odam."
                             </div>
                         </div>
+
+                        <div className="news5-side-block news5-opinion">
+                            <div className="news5-side-title">Sharh</div>
+                            <h4>Chegaralar — hurmat asosi</h4>
+                            <p>
+                                Tushuntirish emas, cheklovlar hurmatni yaratadi. Qisqa javoblar va aniq "yo'q"
+                                — kuch belgisi.
+                            </p>
+                            <div className="news5-quote">
+                                "Tinch kuch — shaxsiyat emas, amaliyot."
+                            </div>
+                        </div>
+
+                        <div className="news5-side-block news5-opinion">
+                            <div className="news5-side-title">Xulosa</div>
+                            <h4>Vaqt — eng qimmat resurs</h4>
+                            <p>
+                                Rejalar yoziladi, bahonalar kamayadi. "Ha" va "yo'q" aniq aytiladi.
+                                Shahar yangi ritmda nafas olmoqda.
+                            </p>
+                        </div>
                     </aside>
                 </main>
 
-                <footer className="editorial-footer news5-footer">
-                    <div className="editorial-footer-left">
-                        <span>kun.uz</span>
-                        <span>·</span>
-                        <span>Axborot xizmat</span>
-                        <span>·</span>
-                        <span>Tashkent</span>
+                <div className="news5-bottom">
+                    <div className="news5-bottom-col">
+                        <p>Ishonchli odam va'dani bajaradi. Tartib — stressni kamaytiradi.</p>
+                        <p><strong>O'QUVCHI:</strong> "Deraza yonida — yuzim kamroq charchagan." — Toshkent.</p>
                     </div>
-                    <div className="editorial-footer-right">© 2026</div>
+                    <div className="news5-bottom-col">
+                        <p>"Bahosi" bilan o'lchashni kamaytirsangiz — bosim kamayadi.</p>
+                        <p><strong>REKLAMA:</strong> Tinch kuch A4 · Portret B2 · Davomiy 13A.</p>
+                    </div>
+                </div>
+
+                <footer className="editorial-footer news5-footer">
+                    <div className="footer-contact">
+                        <span>© 2026 kun.uz · Axborot xizmat · Tashkent</span>
+                        <span>Contact: info@kun.uz · +998 71 200 00 00 · kun.uz · Telegram: @kunuz</span>
+                    </div>
                 </footer>
             </div>
         </NewspaperPage>

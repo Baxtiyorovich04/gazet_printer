@@ -432,6 +432,37 @@
     line-height: 1.3;
 }
 
+.classic-right-bottom {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.15);
+    width: 100%;
+    align-self: stretch;
+}
+
+.classic-right-fill-title {
+    font-family: var(--font-meta);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 8px 0 4px;
+    color: var(--accent-gold);
+}
+
+.classic-right-fill-title:first-child {
+    margin-top: 0;
+}
+
+.classic-right-bottom p {
+    font-family: var(--font-body);
+    font-size: 9px;
+    line-height: 1.4;
+    margin: 0 0 6px;
+    color: var(--ink-muted);
+    text-align: justify;
+}
+
 .classic-divider {
     height: 1px;
     background: rgba(0, 0, 0, 0.2);
@@ -461,6 +492,7 @@
 .classic-footer {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     margin-top: 8px;
     padding-top: 6px;
     border-top: 1px solid rgba(0, 0, 0, 0.15);
@@ -470,3 +502,4 @@
     text-transform: uppercase;
     color: var(--ink-muted);
 }
+

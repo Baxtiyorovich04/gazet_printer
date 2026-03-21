@@ -346,3 +346,11 @@
     text-transform: uppercase;
     color: var(--ink-muted);
 }
+
+.modern-footer .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    text-align: center;
+}

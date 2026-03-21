@@ -160,6 +160,13 @@ export default function NewspaperLayoutClassic() {
                                 </div>
                             </div>
                         </div>
+                        <div className="classic-right-bottom">
+                            <div className="classic-right-fill-title">BEHIND THE LENS</div>
+                            <p>Our photographers were instructed to capture "quiet confidence." Three asked what that meant. One still hasn't returned our calls.</p>
+                            <p>Natural light preferred. Artificial light acceptable. Existential dread optional.</p>
+                            <div className="classic-right-fill-title">READER TIP</div>
+                            <p>"I stood by a window. My face looked less tired. Would recommend." — Subscriber, Tashkent</p>
+                        </div>
                     </div>
                 </section>
 
@@ -194,7 +201,10 @@ export default function NewspaperLayoutClassic() {
                 </div>
 
                 <footer className="classic-footer">
-                    <span>© 2026 The Chronicle · Printed in Tashkent</span>
+                    <div className="footer-contact">
+                        <span>© 2026 The Chronicle · Printed in Tashkent</span>
+                        <span>Contact: editor@chronicle.uz · +998 71 123 45 67 · Amir Temur St. 1, Tashkent</span>
+                    </div>
                     <span>Continued on page A2</span>
                 </footer>
             </div>
