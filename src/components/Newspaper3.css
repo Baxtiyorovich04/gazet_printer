@@ -84,7 +84,7 @@
 
 .editorial-page3-hero-kicker {
     font-family: var(--font-meta);
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -102,7 +102,7 @@
 
 .editorial-page3-hero-text {
     font-family: var(--font-body);
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.5;
     color: var(--ink);
     text-align: left;
@@ -114,7 +114,7 @@
     margin: 0;
     padding-left: 14px;
     font-family: var(--font-body);
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.4;
     color: var(--ink);
 }
@@ -129,7 +129,7 @@
     border-left: 3px solid var(--accent-gold);
     font-family: var(--font-body);
     font-style: italic;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.35;
     color: var(--ink);
 }
@@ -148,7 +148,7 @@
 
 .page3-content-block p {
     font-family: var(--font-body);
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.5;
     color: var(--ink);
     margin: 0 0 8px;
@@ -183,7 +183,7 @@
 
 .page3-sidebar-title {
     font-family: var(--font-meta);
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -195,7 +195,7 @@
     margin: 0;
     padding-left: 12px;
     font-family: var(--font-body);
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.5;
     color: var(--ink);
 }
@@ -211,7 +211,7 @@
     flex-direction: column;
     gap: 2px;
     font-family: var(--font-meta);
-    font-size: 9px;
+    font-size: 12px;
 }
 
 .page3-brief-label {
@@ -231,7 +231,7 @@
     gap: 6px;
     align-items: baseline;
     font-family: var(--font-meta);
-    font-size: 9px;
+    font-size: 12px;
 }
 
 .page3-teaser-num {
@@ -286,7 +286,7 @@
 .page3-related span:not(.page3-related-title) {
     display: block;
     font-family: var(--font-meta);
-    font-size: 9px;
+    font-size: 12px;
     color: var(--ink-muted);
 }
 
@@ -307,7 +307,7 @@
 
 .page3-sidebar-fill p {
     font-family: var(--font-body);
-    font-size: 9px;
+    font-size: 12px;
     line-height: 1.4;
     margin: 0 0 8px;
     color: var(--ink-muted);
@@ -325,7 +325,7 @@
 
 .page3-bottom-text p {
     font-family: var(--font-body);
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.5;
     margin: 0;
     text-align: justify;
